@@ -18,7 +18,6 @@ def validate_data(data, validation_rules):
         item_validation = True
         for key,val in item.items():
             rules = validation_rules[key]
-            #print(type(val))
             valid = type(val) == rules['type']
             valid = valid and (bool(val) if rules['required'] else True)
             valid = valid and (val<rules['max'] if 'max' in rules else True)
